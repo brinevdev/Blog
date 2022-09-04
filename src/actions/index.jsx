@@ -12,3 +12,10 @@ export const fetchPost = (post) => {
         payload:post
     }
 } 
+
+export const deletePost = (id) => {
+    return {
+        type: 'DELETE_POST',
+        payload:id
+    }
+}

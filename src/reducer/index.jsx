@@ -15,6 +15,11 @@ function reducer(state = initialState,{type,payload}) {
                 ...state,
                 post:payload
             }
+        case 'DELETE_POST':
+            return {
+                ...state,
+                posts: state.posts.filter((post)=>post.id !== payload)
+            }
         default:
             return state;
     }
