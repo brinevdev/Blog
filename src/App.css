@@ -12,17 +12,7 @@ a:hover {
   max-width:1200px;
   margin: 0 auto;
 }
-.header {
-  padding:20px 0px;
-  background-color: #00bcd4;
-  color: #fff;
-  text-align: center;
-}
-.header .container {
-  display: flex;
-  gap: 30px;
-  align-items: baseline;
-}
+
 .menu {
   display: flex;
   justify-items: start;

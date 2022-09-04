@@ -1,5 +1,6 @@
 const initialState = {
     posts:[],
+    post:{},
 }
 
 function reducer(state = initialState,{type,payload}) {
@@ -8,6 +9,11 @@ function reducer(state = initialState,{type,payload}) {
             return {
                 ...state,
                 posts:payload
+            }
+        case 'FETCH_POST':
+            return {
+                ...state,
+                post:payload
             }
         default:
             return state;
