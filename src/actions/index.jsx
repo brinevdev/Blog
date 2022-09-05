@@ -19,3 +19,10 @@ export const deletePost = (id) => {
         payload:id
     }
 }
+
+export const createPost = (post) => {
+    return {
+        type: 'CREATE_POST',
+        payload:post
+    }
+}

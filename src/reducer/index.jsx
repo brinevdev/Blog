@@ -20,6 +20,11 @@ function reducer(state = initialState,{type,payload}) {
                 ...state,
                 posts: state.posts.filter((post)=>post.id !== payload)
             }
+        case 'CREATE_POST':
+            return {
+                ...state,
+                posts: [...state.posts,payload]
+            }
         default:
             return state;
     }

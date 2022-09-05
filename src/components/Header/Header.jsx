@@ -8,7 +8,7 @@ const Header = () => {
             <Link to='/'><h1>Blog</h1></Link> 
             <nav>
                 <ul className='menu'>
-                <li><a href="" className='menu__link'>Создать пост</a></li>
+                <li><Link to="newPost" className='menu__link'>Создать пост</Link></li>
                 </ul>
             </nav>
             </div>
