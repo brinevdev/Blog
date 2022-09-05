@@ -3,6 +3,7 @@ import { Fragment, useState } from 'react';
 import Header from '../../components/Header/Header';
 import { createPost } from './../../actions/'
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 
 const CreatePost = () => {
 
@@ -20,6 +21,7 @@ const CreatePost = () => {
     const onAdd = (e) => {
         e.preventDefault();
         const post = {
+            id:uuidv4(),
             title,
             text
         }
