@@ -31,8 +31,8 @@ function Post({id,title,text}){
                     {text}
                 </div>
                 <div className="post__control">
-                    <a href="" className="post__edit">Отредактировать</a>
-                    <a href="" className="post__delete" onClick = {(e)=>onDelete(e,id)}>Удалить</a>
+                    <Link to = {`/posts/${id}/edit`} className="post__edit">Отредактировать</Link>
+                    <a href = "" className="post__delete" onClick = {(e)=>onDelete(e,id)}>Удалить</a>
                 </div>
             </div>
     )

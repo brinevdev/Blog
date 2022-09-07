@@ -26,3 +26,11 @@ export const createPost = (post) => {
         payload:post
     }
 }
+
+
+export const editPost = (post) => {
+    return {
+        type: 'EDIT_POST',
+        payload:post
+    }
+}

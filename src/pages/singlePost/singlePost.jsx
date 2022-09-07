@@ -18,6 +18,7 @@ const SinglePost = () => {
    },[id])
   
     const {post} = useSelector(state => state);
+    const  { title,text } = post;
 
     const isPostEmpty = (post) => {
       return Object.keys(post).length == 0
@@ -34,7 +35,6 @@ const SinglePost = () => {
           </>
     )
     
-    const{ title,text }= post;
 
     return (
         <>
@@ -43,16 +43,7 @@ const SinglePost = () => {
                 <div className="container">
                   <div className="blog">
                     <div className="blog__item">
-                        <div className="blog__item post">
-                          <h2 className="post__title">{title}</h2>
-                          <div className="post__body">
-                           {text}
-                          </div>
-                          <div className="post__control">
-                              <Link to="#" className="post__edit">Отредактировать</Link>
-                              <Link to="#" className="post__delete">Удалить</Link>
-                          </div>
-                      </div>
+                       <Post id = {id} title = {title} text = {text}/>
                     </div>
                   </div>
                 </div>
