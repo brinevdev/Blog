@@ -25,8 +25,10 @@ const Posts = () => {
         const page = searchParams.get('_page');
         if (page) setPage(+page);
       },[])
+
+
     const {posts} = useSelector(state =>state);
-      console.log(maxPages);
+   
     const onPageChange = (i) => {
       if (page + i === 0 || page + i > maxPages) return 
       setPage(page + i)

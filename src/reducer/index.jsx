@@ -28,9 +28,9 @@ function reducer(state = initialState,{type,payload}) {
         case 'EDIT_POST':
             return {
                 ...state,
-                posts: state.post.map((post)=> {
+                posts: state.posts.map((post)=> {
                     if (post.id === payload.id) return {id:post.id, ...payload}
-                    return
+                    return post
                 })
             }
         default:
