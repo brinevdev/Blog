@@ -2,8 +2,7 @@ import './App.css';
 import { Routes, Route} from 'react-router-dom';
 import Posts from './pages/Posts/Posts';
 import SinglePost from './pages/singlePost/singlePost';
-import CreatePost from './pages/CreatePost/CreatePost';
-import EditPost from './pages/EditPost/EditPost';
+import PostFormContainer from './components/PostForm/PostFormContainer';
 
 function App() {
 
@@ -11,8 +10,8 @@ function App() {
     <Routes>
         <Route path='/' element = {<Posts/>}></Route>
         <Route path='/posts/:id' element = {<SinglePost/>}></Route>
-        <Route path='/posts/create' element = {<CreatePost/>}></Route>
-        <Route path='/posts/:id/edit' element = {<EditPost/>}></Route>
+        <Route path='/posts/create' element = {<PostFormContainer/>}></Route>
+        <Route path='/posts/:id/edit' element = {<PostFormContainer/>}></Route>
     </Routes>
   );
 }

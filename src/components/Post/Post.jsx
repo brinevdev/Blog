@@ -26,7 +26,7 @@ function Post({id,title,text}){
 
     return (
             <div className="blog__item post">
-            <Link to={`posts/${id}`}><h2 className="post__title">{title}</h2></Link>  
+            <Link to={`/posts/${id}`}><h2 className="post__title">{title}</h2></Link>  
                 <div className="post__body">
                     {text}
                 </div>
