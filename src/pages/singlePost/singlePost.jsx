@@ -12,7 +12,7 @@ const SinglePost = () => {
     
   
    useEffect(()=> {
-    fetch(`http://localhost:3000/posts/${id}`) 
+    fetch(`http://localhost:3001/posts/${id}`) 
     .then(res => res.json())
     .then(post => dispatch(fetchPost(post)));
    },[id])

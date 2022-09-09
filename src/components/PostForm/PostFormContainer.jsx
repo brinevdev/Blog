@@ -13,10 +13,10 @@ const PostFormContainer = () => {
     const {id} = useParams('id');
     const oldPost = useSelector(state => state.posts.find((post)=>post.id == id));
    
-    const edit = id ? true : false;
+    const edit = id && oldPost ? true : false;
 
     function postEdit(post) {
-        fetch(`http://localhost:3000/posts/${id}`,{
+        fetch(`http://localhost:3001/posts/${id}`,{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(post)
@@ -32,7 +32,7 @@ const PostFormContainer = () => {
     }
 
     function postCreate(post) {
-        fetch('http://localhost:3000/posts',{
+        fetch('http://localhost:3001/posts',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(post)
@@ -48,7 +48,8 @@ const PostFormContainer = () => {
     }
 
 
-    const onFormSubmit = (post) => {
+    const onFormSubmit = (e,post) => {
+        e.preventDefault();
         if (edit) {
             postEdit(post)
         } else {

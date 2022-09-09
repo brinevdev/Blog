@@ -1,9 +1,10 @@
 import './postForm.css';
 import { useState } from 'react';
-import Header from '../Header/Header';
+import { Link } from 'react-router-dom';
 
 const PostForm = ({edit,defaultTitle,defaultText,onFormSubmit}) => {
 
+   
 
     const [title,setTitle] = useState(defaultTitle || '');
     const [text,setText] = useState(defaultText || '');
@@ -28,7 +29,16 @@ const PostForm = ({edit,defaultTitle,defaultText,onFormSubmit}) => {
     
     return (
         <>
-        <Header/>
+        <header className="header">
+            <div className="container">
+            <Link to='/'><h1>Blog</h1></Link> 
+            <nav>
+                <ul className='menu'>
+        
+                </ul>
+            </nav>
+            </div>
+        </header>
         <div className="container">
             <form action="" className="form">
                 <div className="form__title">Введите название</div>
@@ -37,7 +47,7 @@ const PostForm = ({edit,defaultTitle,defaultText,onFormSubmit}) => {
                 <div className="form__title">Введите текст</div>
                 {textError ? <div className='error-message'>Поле не может быть пустым</div> : null}
                 <textarea name="text" id="" className='form__text-area' value={text} onChange = {onChangeText}></textarea>
-                <button className='form__button' onSubmit={() => onFormSubmit({title,text})}>{edit ? 'Отредактировать' : 'Добавить'}</button>
+                <button className='form__button' onClick={(e) => onFormSubmit(e,{title,text})}>{edit ? 'Отредактировать' : 'Добавить'}</button>
             </form>
         </div>
     </>
