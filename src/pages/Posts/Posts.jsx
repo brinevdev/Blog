@@ -15,7 +15,7 @@ const Posts = () => {
     const [searchParams,setSearchParams] = useSearchParams();
    
     useEffect(()=>{
-        fetch(`http://localhost:3000/posts/?_limit=${limit}&_page=${page}`)
+        fetch(`http://localhost:3001/posts/?_limit=${limit}&_page=${page}`)
         .then(res => res.json())
         .then(posts => dispatch(fetchPosts(posts)))
         .then(setSearchParams({'_page':page,}))

@@ -11,7 +11,7 @@ function Post({id,title,text}){
 
    const onDelete = (e,id) => {
         e.preventDefault();
-        fetch(`http://localhost:3000/posts/${id}`,{
+        fetch(`http://localhost:3001/posts/${id}`,{
             method:'DELETE'
         })
         .then(res => {
