@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { fetchPosts } from './../../actions';
 import Header from '../../components/Header/Header';
 import { useSearchParams } from 'react-router-dom';
+import { JSON_API } from '../../constants';
 
 const Posts = () => {
     const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const Posts = () => {
     const [searchParams,setSearchParams] = useSearchParams();
    
     useEffect(()=>{
-        fetch(`http://localhost:3001/posts/?_limit=${limit}&_page=${page}`)
+        fetch(`${JSON_API}/posts/?_limit=${limit}&_page=${page}`)
         .then(res => res.json())
         .then(posts => dispatch(fetchPosts(posts)))
         .then(setSearchParams({'_page':page,}))

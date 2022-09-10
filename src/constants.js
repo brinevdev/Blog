@@ -1,0 +1,1 @@
+export const JSON_API = `https://dashboard.heroku.com/apps/blog543/api`;

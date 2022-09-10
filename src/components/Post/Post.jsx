@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './post.css';
 import { useDispatch } from 'react-redux';
 import { deletePost} from './../../actions/'
+import { JSON_API } from '../../constants';
 
 function Post({id,title,text}){
 
@@ -11,7 +12,7 @@ function Post({id,title,text}){
 
    const onDelete = (e,id) => {
         e.preventDefault();
-        fetch(`http://localhost:3001/posts/${id}`,{
+        fetch(`${JSON_API}/posts/${id}`,{
             method:'DELETE'
         })
         .then(res => {

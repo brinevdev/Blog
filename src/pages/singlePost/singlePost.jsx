@@ -4,6 +4,7 @@ import Post from "../../components/Post/Post";
 import { fetchPost } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../../components/Header/Header";
+import { JSON_API } from "../../constants";
 
 const SinglePost = () => {
     
@@ -12,7 +13,7 @@ const SinglePost = () => {
     
   
    useEffect(()=> {
-    fetch(`http://localhost:3001/posts/${id}`) 
+    fetch(`${JSON_API}/posts/${id}`) 
     .then(res => res.json())
     .then(post => dispatch(fetchPost(post)));
    },[id])

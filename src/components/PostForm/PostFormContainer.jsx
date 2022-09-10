@@ -3,6 +3,7 @@ import PostForm from "./PostForm";
 import { createPost, editPost } from './../../actions/'
 import { useDispatch,useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
+import { JSON_API } from "../../constants";
 
 
 const PostFormContainer = () => {
@@ -16,7 +17,7 @@ const PostFormContainer = () => {
     const edit = id && oldPost ? true : false;
 
     function postEdit(post) {
-        fetch(`http://localhost:3001/posts/${id}`,{
+        fetch(`${JSON_API}/posts/${id}`,{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(post)
@@ -32,7 +33,7 @@ const PostFormContainer = () => {
     }
 
     function postCreate(post) {
-        fetch('http://localhost:3001/posts',{
+        fetch(`${JSON_API}/posts`,{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(post)
