@@ -1,7 +1,7 @@
 import { Fragment, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Post from "../../components/Post/Post";
-import { fetchPost } from "../../actions";
+import { fetchPost } from "../../components/postsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../../components/Header/Header";
 

@@ -3,7 +3,7 @@ import Header from '../Header/Header';
 import { Link } from 'react-router-dom';
 import './post.css';
 import { useDispatch } from 'react-redux';
-import { deletePost} from './../../actions/'
+import { deletePost} from './../../components/postsSlice'
 
 function Post({id,title,text}){
 

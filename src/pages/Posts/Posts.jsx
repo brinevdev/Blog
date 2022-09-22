@@ -3,7 +3,7 @@ import { Fragment, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Post from './../../components/Post/Post'
 import { useEffect } from 'react';
-import { fetchPosts } from './../../actions';
+import { fetchPosts } from './../../components/postsSlice';
 import Header from '../../components/Header/Header';
 import { useSearchParams } from 'react-router-dom';
 

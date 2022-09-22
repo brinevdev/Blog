@@ -1,6 +1,6 @@
 import { useParams,useNavigate } from "react-router-dom";
 import PostForm from "./PostForm";
-import { createPost, editPost } from './../../actions/'
+import { createPost, editPost } from './../../components/postsSlice';
 import { useDispatch,useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 
